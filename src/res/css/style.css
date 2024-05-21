@@ -1,0 +1,17 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+#canvas-container
+{
+    margin: 0 auto; 
+    background-color: chocolate;
+    width: 100px;
+    height: 100px;
+}
