@@ -12,6 +12,11 @@
 {
     margin: 0 auto; 
     background-color: chocolate;
-    width: 100px;
-    height: 100px;
+    width: 640px;
+    height: 480px;
+}
+
+canvas 
+{
+    background-color: blanchedalmond;
 }
