@@ -1,15 +1,26 @@
 
 
 
+import engineB from "../lib/index.js" 
+
+// Square Sample Code 
 import createRect from "../lib/temp/funcs/createRect.js"
 import updateCords from "../lib/temp/funcs/updateCords.js"
 
 
+
+
+// Vars 
+const { KeyboardController } = engineB 
+
+
+// Canvas 
 const canvas = document.getElementById("canvas")
 canvas.width = 640
 canvas.height = 480 
 
 const ctx = canvas.getContext("2d") 
+
 
 
 // Presets 
@@ -27,6 +38,7 @@ var dt = 0
 // Game Entities 
 
 var rect = createRect() 
+var keyboardController = new KeyboardController() 
 
 
 function loopy(ms)
@@ -56,9 +68,6 @@ function loopy(ms)
 
     // Draw new state 
     ctx.fillRect( rect.x , rect.y ,  rect.width, rect.height )
-
-
-    console.log( dt ) 
 
 }
 
