@@ -1,6 +1,10 @@
 
 
 
+import createRect from "../lib/temp/funcs/createRect.js"
+import updateCords from "../lib/temp/funcs/updateCords.js"
+
+
 const canvas = document.getElementById("canvas")
 canvas.width = 640
 canvas.height = 480 
@@ -20,6 +24,11 @@ var currentAnimationTime = 0
 var dt = 0 
 
 
+// Game Entities 
+
+var rect = createRect() 
+
+
 function loopy(ms)
 {
     requestAnimationFrame( loopy )
@@ -28,6 +37,25 @@ function loopy(ms)
     currentAnimationTime = ms / 1000 
     dt = currentAnimationTime - lastAnimationTime
     lastAnimationTime = currentAnimationTime 
+
+
+    // clear screen 
+    ctx.save() 
+    ctx.fillStyle = "pink"
+    ctx.clearRect(0,0, canvas.width, canvas.height ) 
+    ctx.fillRect( 0, 0, canvas.width, canvas.height ) 
+    ctx.restore() 
+    
+    
+    // Update Shape Position
+    updateCords( rect )
+
+    // Check for collision
+    // Respond to collision
+
+
+    // Draw new state 
+    ctx.fillRect( rect.x , rect.y ,  rect.width, rect.height )
 
 
     console.log( dt ) 
